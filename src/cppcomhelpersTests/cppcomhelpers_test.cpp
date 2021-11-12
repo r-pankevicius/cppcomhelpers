@@ -3,8 +3,8 @@
 
 HRESULT abc(void *p)
 {
-	GUARD_FAILED_HR(S_OK);
-	GUARD_NULL_POINTER(p);
+	HR_GUARD_FAILED(S_OK);
+	HR_GUARD_NULL_POINTER(p);
 	return S_OK;
 }
 
