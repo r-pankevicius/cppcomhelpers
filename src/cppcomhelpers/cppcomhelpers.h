@@ -8,6 +8,22 @@
 #include <vcruntime.h>
 #include <winerror.h>
 
+// Error handling MACRO.
+// Returns HRESULT if guard_failed_hr_param is a failed HRESULT. Continues if no fail.
+#define GUARD_FAILED_HR(guard_failed_hr_param) \
+   { \
+      if (FAILED(guard_failed_hr_param)) \
+		return guard_failed_hr_param; \
+   }
+
+// Error handling MACRO.
+// Returns HRESULT if parameter is NULL. Continues otherwise.
+#define GUARD_NULL_POINTER(parameter) \
+   { \
+      if (NULL == parameter) \
+		return E_POINTER; \
+   }
+
 /// <summary>
 /// Utility functions to make standard COM methods implementation (STDMETHODIMP) easier.
 /// </summary>
