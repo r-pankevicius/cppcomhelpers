@@ -1,7 +1,7 @@
 #include "pch.h"
-#include "cppcomhelpers.h"
+#include "comhelpers.h"
 
-HRESULT abc(void *p)
+HRESULT macroUsage(void *p)
 {
 	HR_GUARD_FAILED(S_OK);
 	HR_GUARD_NULL_POINTER(p);
@@ -14,7 +14,7 @@ TEST(TestCaseName, TestName)
 	EXPECT_TRUE(true);
 
 	int n = 1;
-	EXPECT_EQ(abc((void*)&n), S_OK);
+	EXPECT_EQ(macroUsage((void*)&n), S_OK);
 
-	EXPECT_EQ(abc(NULL), E_POINTER);
+	EXPECT_EQ(macroUsage(NULL), E_POINTER);
 }

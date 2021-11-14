@@ -1,4 +1,4 @@
-// cppcomhelpers.h
+// comhelpers.h
 
 #pragma once
 
@@ -27,7 +27,7 @@
 /// <summary>
 /// Utility functions to make standard COM methods implementation (STDMETHODIMP) easier.
 /// </summary>
-class cppcomhelpers
+class ComHelpers
 {
 public:
 	/// <summary>
