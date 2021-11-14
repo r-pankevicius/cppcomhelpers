@@ -37,8 +37,7 @@ public:
 	/// <returns>S_OK or E_POINTER (if pRetVal is null)</returns>
 	template<class T> static HRESULT Get(const T value, T* pRetVal) noexcept
 	{
-		if (NULL == pRetVal)
-			return E_POINTER;
+		HR_GUARD_NULL_POINTER(pRetVal);
 
 		*pRetVal = value;
 		return S_OK;
@@ -62,8 +61,7 @@ public:
 	/// <returns>S_OK or E_POINTER (if pRetVal is null)</returns>
 	static HRESULT GetBoolToVariantBool(bool boolValue, VARIANT_BOOL* pRetVal) noexcept
 	{
-		if (NULL == pRetVal)
-			return E_POINTER;
+		HR_GUARD_NULL_POINTER(pRetVal);
 
 		*pRetVal = BoolToVariantBool(boolValue);
 		return S_OK;
@@ -86,8 +84,7 @@ public:
 	/// </summary>
 	static HRESULT GetBSTR(const CComBSTR& value, BSTR* pRetVal) noexcept
 	{
-		if (NULL == pRetVal)
-			return E_POINTER;
+		HR_GUARD_NULL_POINTER(pRetVal);
 
 		*pRetVal = value.Copy();
 		return S_OK;
